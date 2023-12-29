@@ -14,3 +14,19 @@ function calculateTriangleArea() {
 
     
 }
+function calculateReactangleArea() {
+    const rectangWidth = document.getElementById("rectangle-width");
+    const widthValueText = rectangWidth.value
+    const width = parseFloat(widthValueText)
+    const rectanglelenght = document.getElementById("rectangle-lenght");
+    const lenghtValueText = rectanglelenght.value;
+    const lenght = parseFloat(lenghtValueText)
+    const area = width * lenght
+    const areaSpan = document.getElementById("rectangle-area");
+    areaSpan.innerText =area
+
+}
+// Parallelogram;
+function calculateParallelogramArea() {
+    
+}
