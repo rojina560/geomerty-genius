@@ -26,7 +26,32 @@ function calculateReactangleArea() {
     areaSpan.innerText =area
 
 }
-// Parallelogram;
+// Parallelogram; reusable function reduce duplicate code
 function calculateParallelogramArea() {
+    const base = getInputValue("Parallelogram-base");
+    const length = getInputValue("Parallelogram-lenght");
+    const area = base * length
+    setElementById("Parallelogram-area",area);
     
+    
+}
+
+function getInputValue( inputId) {
+    const inputField = document.getElementById(inputId);
+    const inputTextValue = inputField.value
+    const value = parseFloat(inputTextValue);
+    return value
+}
+function setElementById(elementId, area) {
+    const element = document.getElementById(elementId);
+    element.innerText = area
+}
+
+
+
+function calculateellipseArea() {
+    const majorRedius = getInputValue("ellipse-major");
+    const minorRedius = getInputValue("ellipse-minor");
+    const area = majorRedius * minorRedius;
+    setElementById("ellipse-area",area);
 }
