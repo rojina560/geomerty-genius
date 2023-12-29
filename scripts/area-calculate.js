@@ -54,6 +54,24 @@ function calculateellipseArea() {
     setElementById("ellipse-area", area);
     addToCalculationEntry('ellipse',area)
 }
+function calculateRhombusArea() {
+  const width = getInputValue("Rhombus-base");
+  const length = getInputValue("Rhombus-lenght");
+  const area = 0.5 * width * length;
+  setElementById("Rhombus-area", area);
+  addToCalculationEntry( 'rhombus',area)
+  
+
+}
+function calculatePentagonArea() {
+  const base = getInputValue("Pentagon-base");
+  const length = getInputValue("Pentagon-lenght");
+  const area = base * length;
+  setElementById("Pentagon-area", area);
+  addToCalculationEntry( 'pantagon',area)
+  
+}
+
 // reusable function reduce duplicate code
 function getInputValue( inputId) {
     const inputField = document.getElementById(inputId);
@@ -74,13 +92,12 @@ function setElementById(elementId, area) {
  * 5. append the created element as a child of the parent
  */
 function addToCalculationEntry(areaType, area) {
-    console.log(areaType + ' ' + area)
     const calculationEntry = document.getElementById("calculation-entry");
-    const count = calculationEntry.childElementCount;
+  const count = calculationEntry.childElementCount;
     const p = document.createElement('p');
     p.classList.add('my-4')
 
-    p.innerHTML = `${count} ${areaType}${area} cm<sup>2</sup> <button class="btn btn-sm btn-success"> convert </button>`
+    p.innerHTML = `${count}  ${areaType}  ${area} cm<sup>2</sup> <button class="btn btn-sm btn-success"> convert </button>`
     calculationEntry.appendChild(p)
 }
 
